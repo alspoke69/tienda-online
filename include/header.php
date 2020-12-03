@@ -1,3 +1,11 @@
+<?php include("db/localhost.php");
+
+session_start();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +25,24 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Registro</a>
+            <?php if(isset($_SESSION['login'])) { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="productos.php">Agregar producto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Iniciar sesión</a>
+              <a class="nav-link" href="productos.php">Carrito</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a>
+            </li>
+              <?php  } else { ?>
+            <li class="nav-item">
+              <a class="nav-link" href="registro.php">Registro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Iniciar sesión</a>
+            </li>
+            <?php } ?>
           </ul>
         </div>
       </nav>

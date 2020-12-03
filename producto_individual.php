@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<?php include("include/header.php") ?>
 
 
+<?php include("include/header.php");
+
+ $uid = $_GET['uid'];
+ $nombre = $_GET['nombre'];
+ $imagen = $_GET['imagen'];
+ $precio = $_GET['precio'];
+ 
+ ?>
 
 <body>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
-      <h1 class="page-header">Tenis Air Jordan</h1>
+      <h1 class="page-header"><?php echo $nombre; ?></h1>
     </div>
   </div>
   <!-- /.row -->
@@ -20,7 +24,7 @@
       <div class="">
       <div class="col-sm-12">
         <div class="main-product-image">
-        <img class="card-img-top" src="jumpman.jpg" alt="Imagen de un calzado negro" >
+        <img class="card-img-top" src="<?php echo $imagen; ?>" alt="Imagen de un calzado negro" >
         </div>
       </div>
       </div>
@@ -28,7 +32,7 @@
 
     <div class="col-md-6 col-sm-12">
       <div class="col-sm-12">
-        <form class="form-horizontal" action="/cart/add/341155" method="post" name="buy">
+        <form class="form-horizontal" name="buy">
           <div class="row">
 
 
@@ -39,37 +43,14 @@
             <div class="form-group">
               <label class="col-sm-3 col-md-3 control-label">Precio:</label>
               <div class="col-sm-8 col-md-9">
-                <span class="product-form-price">$2,399 MXN</span>
-                
-
-              </div>
-            </div>
-
-            
-            	<div class="form-group">
-                <label class="col-sm-3 col-md-3 control-label">Marca:</label>
-                <div class="col-sm-8 col-md-9">
-                  <span class="product-form-brand">Nike</span>
-                </div>
-              </div>
-            
-            
-            <div class="form-group">
-              <label for="Quantity" class="col-sm-3 col-md-3 control-label">Cantidad:</label>
-              <div class="col-sm-8 col-md-9">
-                <input type="text" class="form-control" id="input-qty" name="qty" maxlength="5" value="1">
-              </div>
-            </div>
-
-            
-
-            
+                <span class="product-form-price">$<?php echo $_GET['precio']; ?> MXN</span>
+                      
 
             <div class="form-group product-stock">
               <div class="col-sm-8 col-sm-offset-3 col-md-9 col-md-offset-3">
-                <input type="submit" class="btn btn-primary" value="Agregar al Carro de Compras" />
+                <a href ="agregar_carrito.php?uid=<?php echo $uid ?>&nombre=<?php echo $nombre?>&precio=<?php echo $precio ?>&imagen=<?php echo $imagen?>"  class="btn btn-primary">Agregar a carrito <a/>
                 <br>
-                <a href="index.php" class="btn btn-link" title="Continúa Comprando">← Continúa Comprando</a>
+                <a href="index.php?uid=<?php echo $uid ?>" class="btn btn-link" title="Continúa Comprando">← Continúa Comprando</a>
               </div>
             </div>
 
