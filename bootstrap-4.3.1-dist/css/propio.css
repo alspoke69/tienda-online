@@ -1,12 +1,15 @@
-#imagen-tamano{
-    width: 250px;
-    height: 30g0px;
-}
+
 #imagen-tamano{
     width: 250px;
     height: 400px;
 }
 
-cyan{
+#imagen-carrito{
+    width: 250px;
+    height: 200px;
+}
+
+
+#cyan{
     background-color: darkcyan;
 }

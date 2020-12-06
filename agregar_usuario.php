@@ -23,14 +23,28 @@ $result = mysqli_query($conexion,"SELECT * FROM usuario where correo = '$email' 
 $row = mysqli_fetch_array($result);
 
 $uid = $row['id'];
+$rol = $row['rol'];
 
+if($rol== 1){
+
+
+   session_start();
+   $_SESSION['login'] = 'usuario';
+   header("location: index.php?rol='$rol'&uid=".$uid);
+
+
+ }
+
+ elseif($rol== 2){
 
 
    session_start();
    $_SESSION['login'] = 'administrador';
-   header("location: index.php?uid=".$uid);
+   header("location: index.php?rol='$rol'&uid=".$uid);
 
 
+ } else {
 
+ }
 
 ?>

@@ -18,18 +18,34 @@ $password = stripcslashes($password);
 $result = mysqli_query($conexion,"SELECT * FROM usuario WHERE correo = '$email' and contrasena = '$password'"
 ) or die("Failed to query database ");
 $row = mysqli_fetch_array($result);
+$rol = $row['rol'];
 
-if($row['correo'] == $email && $row['contrasena'] == $password){
+if($row['correo'] == $email && $row['contrasena'] == $password && $rol== 1){
+    echo "Login sucessfull";
+
+    $uid = $row['id'];
+   
+
+    session_start();
+    
+    $_SESSION['login'] = 'usuario';
+    header("location: index.php?rol='$rol'&uid=".$uid);
+
+} 
+
+elseif($row['correo'] == $email && $row['contrasena'] == $password && $rol== 2){
     echo "Login sucessfull";
 
     $uid = $row['id'];
     $rol = $row['rol'];
 
     session_start();
+    
     $_SESSION['login'] = 'administrador';
     header("location: index.php?rol='$rol'&uid=".$uid);
 
-} else {
+}
+else {
 
     header("location: login.php");
     

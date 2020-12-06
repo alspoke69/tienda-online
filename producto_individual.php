@@ -2,14 +2,16 @@
 
 <?php include("include/header.php");
 
- $uid = $_GET['uid'];
+if(isset($_GET['uid'])){
+$uid = $_GET['uid'];
+} else {}
  $nombre = $_GET['nombre'];
  $imagen = $_GET['imagen'];
  $precio = $_GET['precio'];
  
  ?>
 
-<body>
+<body id="cyan">
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <h1 class="page-header"><?php echo $nombre; ?></h1>
