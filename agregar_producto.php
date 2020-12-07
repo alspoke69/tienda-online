@@ -25,11 +25,11 @@ if (isset($_POST['agregar_producto'])) {
 
 
 
-
+    $uid = $_GET['uid']; 
 $_SESSION['message'] = 'Guardado exitosamente';
 $_SESSION['message_type'] = 'Exitoso';
 
-header("Location: index.php");
+header("Location: index.php?uid=".$uid);
 
 }
 echo 'sdfsdf';

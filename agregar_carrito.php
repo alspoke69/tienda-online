@@ -18,7 +18,7 @@ $imagen = $_GET['imagen'];
    
    
   
-   header("location: carrito.php?uid='$id'");
+   header("location: carrito.php?uid=".$id);
 
 
 

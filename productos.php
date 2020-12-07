@@ -83,7 +83,7 @@
   				<div class="col-lg-7 ">
             <h1 class="h1_1">Registro de productos</h1>
   					
-  					<form action="agregar_producto.php" method="POST">
+  					<form action="agregar_producto.php?uid=<?php echo $_GET['uid']; ?>" method="POST">
   						<div class="form-row1">
   							<center>
   							<div class="col-lg-7">	

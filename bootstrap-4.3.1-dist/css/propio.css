@@ -9,6 +9,14 @@
     height: 200px;
 }
 
+#imagen-exito{
+    width: 500px;
+    height: 500px;
+}
+
+.centrar{
+    align-content: center;
+}
 
 #cyan{
     background-color: darkcyan;

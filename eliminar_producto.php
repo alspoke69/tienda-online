@@ -4,9 +4,10 @@
 include("db/localhost.php");
 
     $id = $_GET['id'];
+    $uid = $_GET['uid'];
 
 
-    $query = "DELETE FROM carrito WHERE id=".$id;
+    $query = "DELETE FROM producto WHERE id=".$id;
     $result = mysqli_query($conexion,$query);
 
     if(!$result) {
@@ -21,7 +22,7 @@ include("db/localhost.php");
 $_SESSION['message'] = 'Guardado exitosamente';
 $_SESSION['message_type'] = 'Exitoso';
 
-header("Location: carrito.php");
+header("Location: index.php?uid=".$uid);
 
 
 ?>

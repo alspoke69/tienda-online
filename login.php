@@ -77,8 +77,9 @@
     	}
     </style>
   </head>
-  <body>
 
+  <body>
+  
   	<section class="form my-4 mx-5">
   		<div class="container">
   			<div class="row no-gutters">
@@ -87,20 +88,20 @@
   				</div>
   				<div class="col-lg-7 px-5 pt-5">
   					
-  					<h4 class="h4_1">Inicio de sesion</h4>
+  					<h4 class="h4_1">Inicio de sesión</h4>
   					
   					<form action="ingresar_usuario.php" method= "POST">
   						<div class="form-row1">
   							<center>
   							<div class="col-lg-7">
   								
-  								<input name="email" type="email" placeholder="Correo electronico"class="form-control2">
+  								<input name="email" type="email" placeholder="Correo electrónico"class="form-control2">
 
   							</div>
   							</center>
   							<div class="form-row2">
   							<div class="col-lg-7">
-  								<input name="password" type="password" placeholder="contraseña"class="form-control1 ">
+  								<input name="password" type="password" placeholder="Contraseña"class="form-control1 ">
   							</div>
   						</div>
   						<div class="form-row">
